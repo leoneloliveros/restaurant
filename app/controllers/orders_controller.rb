@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @orders = Order.all
   end
@@ -42,6 +43,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:board, :waiter)
+      params.require(:order).permit(:board, :user_id)
     end
 end

@@ -1,15 +1,15 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <ul>
-      <% @order.errors.full_messages do |msg| %>
+      <% @order.errors.full_messages.each do |msg| %>
         <li><%= msg.to_s %></li>
       <% end %>
     </ul>
   <% end %>
   <%= f.label :board %>
   <%= f.text_field :board %>
+  <%= f.label :user_id %>
+  <%= collection_select(:order, :user_id, User.all, :id, :email, prompt: true) %>
 
-  <%= f.label :waiter %>
-  <%= f.text_field :waiter %>
   <%= f.submit %>
 <% end %>

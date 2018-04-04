@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'bootstrap', '~> 4.0.0'
 gem 'seed_dump'
 gem 'jquery-rails'
@@ -44,7 +45,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'spirit_hands'
+# gem 'spirit_hands'
 end
 
 group :development do
