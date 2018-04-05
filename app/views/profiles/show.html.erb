@@ -1,0 +1,9 @@
+
+<% if @profile %>
+  <%= @profile.name %>
+  <%= @profile.last_name %>
+  <%= link_to "editar perfil", edit_profile_path(@profile) %>
+<% else %>
+  <%= link_to "Crear nuevo perfil", new_profile_path %>
+<% end %>
+<hr>

@@ -1,0 +1,19 @@
+<%= form_for(@profile, url: profile_path ) do |f| %>
+  <% if @profile.errors.any? %>
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg.to_s %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.label :rol %>
+  <%= f.text_field :rol %>
+  <%= f.label :salary %>
+  <%= f.number_field :salary %>
+
+  <%= f.submit %>
+<% end %>
