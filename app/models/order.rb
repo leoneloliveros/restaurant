@@ -10,8 +10,9 @@
 #
 
 class Order < ApplicationRecord
-  has_many :plates
+  has_and_belongs_to_many :plates
   belongs_to :user
+
 
   #validations
   validates :board, presence: true
